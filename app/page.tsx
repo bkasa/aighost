@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function LandingPage() {
@@ -28,7 +28,7 @@ export default function LandingPage() {
       } else {
         setError('Something went wrong. Please try again.')
       }
-    } catch {
+    } catch (_e) {
       setError('Network error. Please try again.')
     } finally {
       setLoading(false)
@@ -75,7 +75,7 @@ export default function LandingPage() {
           </h1>
 
           <p className="text-parchment-300 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-14">
-            Through 10–20 hours of guided conversations, your AI ghostwriter
+            Through 10-20 hours of guided conversations, your AI ghostwriter
             will find your stories, shape your chapters, and write a full
             manuscript that sounds exactly like you.
           </p>
@@ -95,7 +95,7 @@ export default function LandingPage() {
               disabled={loading}
               className="bg-gold-500 hover:bg-gold-400 disabled:opacity-60 disabled:cursor-not-allowed text-ink-900 font-semibold text-sm px-6 py-3.5 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
-              {loading ? 'Redirecting…' : 'Begin Your Book — $2,500'}
+              {loading ? 'Redirecting...' : 'Begin Your Book -- $2,500'}
             </button>
           </form>
 
@@ -117,12 +117,12 @@ export default function LandingPage() {
               {
                 number: '01',
                 title: 'Conversation, not a form',
-                body: 'Your ghostwriter starts with open questions and follows every thread with genuine curiosity. Most authors discover stories they'd forgotten they had.',
+                body: 'Your ghostwriter starts with open questions and follows every thread with genuine curiosity. Most authors discover stories they had forgotten they had.',
               },
               {
                 number: '02',
                 title: 'Your stories, organized',
-                body: 'As you talk, a chapter framework takes shape — 8 to 15 chapters, each with sections designed to flex and move as the book grows.',
+                body: 'As you talk, a chapter framework takes shape -- 8 to 15 chapters, each with sections designed to flex and move as the book grows.',
               },
               {
                 number: '03',
@@ -149,9 +149,9 @@ export default function LandingPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-x-12 gap-y-5">
               {[
-                '10–20+ hours of guided interviews',
+                '10-20+ hours of guided interviews',
                 'Complete chapter + section framework',
-                'Full manuscript draft (50,000–80,000 words)',
+                'Full manuscript draft (50,000-80,000 words)',
                 '50+ stories excavated from your experience',
                 'All session transcripts saved & downloadable',
                 'Revision support with author feedback',
@@ -161,7 +161,7 @@ export default function LandingPage() {
                 'Invite guests to participate in sessions',
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <span className="text-gold-400 mt-0.5 flex-shrink-0">✦</span>
+                  <span className="text-gold-400 mt-0.5 flex-shrink-0">+</span>
                   <span className="text-parchment-300 text-sm leading-relaxed">{item}</span>
                 </div>
               ))}
@@ -194,7 +194,7 @@ export default function LandingPage() {
         {/* Footer */}
         <footer className="border-t border-ink-800 py-10 text-center">
           <div className="text-ink-500 text-sm">
-            © {new Date().getFullYear()} AIGhostwriter.org · All rights reserved
+            {new Date().getFullYear()} AIGhostwriter.org - All rights reserved
           </div>
         </footer>
       </div>

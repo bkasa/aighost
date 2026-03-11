@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { authenticator } from 'otplib'
 import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { decryptSecret } from '../setup-2fa/route'
+import { decryptSecret } from '@/lib/totp'
 
 export async function POST(req: NextRequest) {
   const supabase = await createClient()
